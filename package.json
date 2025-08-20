@@ -1,0 +1,22 @@
+{
+  "name": "playwright-bdd_gherkin_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ui-test" : "npx playwright test --grep @ui-automation --headed",
+    "ui-test-debug" : "npx playwright test --grep @ui-automation --debug",
+    "api-test" : "npx playwright test --grep @api-automation --headed",
+    "api-test-debug" : "npx playwright test --grep @api-automation --debug",
+    "only-test" : "npx playwright test --headed",
+    "only-test-debug" : "npx playwright test --debug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
+    "playwright-bdd": "^8.3.1"
+  }
+}
