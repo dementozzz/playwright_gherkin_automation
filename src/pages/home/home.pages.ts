@@ -29,6 +29,8 @@ export class HomePages{
         }
     }
 
+    
+
     async emptyCartItem(){
         try {
             const removeButtons = this.page.getByRole('button', { name: 'Remove' });

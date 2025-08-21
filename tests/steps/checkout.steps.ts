@@ -6,6 +6,7 @@ import { checkoutInterface } from '../../src/interface/checkout.interface';
 
 const { Given, When, Then, Before } = createBdd();
 
+
 Before(async ({page}) => {
     const authPage = new AuthPages(page);
     await page.goto('https://www.saucedemo.com/');
@@ -16,7 +17,13 @@ Before(async ({page}) => {
 
 When("I'll make sure my item cart empty first", async ({page}) => {
     const homePage = new HomePages(page)
-    await homePage.emptyCartItem();
+    
+    try {
+        await homePage.emptyCartItem();
+    } catch (error) {
+        throw error;
+    }
+    
 })
 
 When("I'll add several items in my cart", async ({page}) => {
@@ -41,10 +48,6 @@ When("I navigate to cart page", async ({page}) => {
     await homePage.navigateToCartPage();
 })
 
-Given("I verify the subtotal of all items price: Cart Page", async ({page}) => {
-    
-})
-
 When("I proceed to checkout step 1: Information", async ({page}) => {
     const checkoutPage = new CheckoutPages(page);
     await checkoutPage.navigateToCheckoutInformationPage()
@@ -56,7 +59,8 @@ When("I proceed to checkout step 2: Overview", async ({page}) => {
 })
 
 Given("I verify subtotal & total of items price: Checkout Overview Page", async ({page}) => {
-
+    const checkoutPage = new CheckoutPages(page);
+    await checkoutPage.expectTotalPriceIsCorrect();
 })
 
 Then("I should finish my checkout process", async ({page}) => {

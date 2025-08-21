@@ -7,6 +7,7 @@ export class CheckoutLocator{
     readonly cartItemRemoveBtn: Locator
     readonly cartItemName: Locator
     readonly cartItemPrice: Locator
+    readonly itemTax: Locator
     readonly checkoutInformationBtn: Locator
     readonly firstNameInput: Locator
     readonly lastNameInput: Locator
@@ -24,6 +25,7 @@ export class CheckoutLocator{
         this.cartItemRemoveBtn = page.locator("//div[@class='item_pricebar']//button")
         this.cartItemName = page.locator("//div[@data-test='inventory-item-name']")
         this.cartItemPrice = page.locator("//div[@data-test='inventory-item-price']")
+        this.itemTax = page.locator("//div[@data-test='tax-label']")
         this.checkoutInformationBtn = page.locator("//button[@data-test='checkout']")
 
 
