@@ -4,9 +4,6 @@ This repository contains WEB automation tests built with `Playwright`, `TypeScri
 
 ## Pre-requisite
 - [Node.Js](https://nodejs.org/en/download)
-- [Playwright](https://playwright.dev/docs/intro)
-- [Playwright-BDD](https://vitalets.github.io/playwright-bdd/#/getting-started/installation)
-- [Cucumber (Gherkin) Full Support - Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=alexkrechik.cucumberautocomplete)
 
 ## Installation
 
