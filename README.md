@@ -27,3 +27,23 @@ cd playwright_gherkin_automation
 ```bash
 npm ci
 ```
+
+## Execute Testing
+
+If `.features-gen` folder didn't present on the project OR made any changes on .feature files in `tests/features/`, you must run command below:
+
+```bash
+npx bddgen
+```
+
+After that, the folder `features-gen/tests/features/` along with test file will be created, then you can start execute test by run command:
+
+```bash
+npx playwright test --headed
+```
+
+or with debug mode:
+
+```bash
+npx playwright test --debug
+```
